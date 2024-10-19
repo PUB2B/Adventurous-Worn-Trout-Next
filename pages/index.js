@@ -1,55 +1,50 @@
 import React from 'react'
 import Head from 'next/head'
 
-import Script from 'dangerous-html/react'
-
 const Home = (props) => {
   return (
     <>
-      <div className="home-container1">
+      <div className="home-container">
         <Head>
           <title>Adventurous Worn Trout</title>
           <meta property="og:title" content="Adventurous Worn Trout" />
         </Head>
-        <div className="home-container2">
-          <div className="home-container3">
-            <Script
-              html={`<html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Landbot | Convert a Landing Page into a Chatbot</title>
-  </head>
-  <body>
-    <script SameSite="None; Secure" src="https://cdn.landbot.io/landbot-3/landbot-3.0.0.js"></script>
-    <script>
-      var myLandbot = new Landbot.Fullpage({
-        configUrl: 'https://storage.googleapis.com/landbot.online/v3/H-2646357-3Q9773UUXZUYB3GQ/index.json',
-      });
-    </script>
-  </body>
-</html>`}
-            ></Script>
-          </div>
-        </div>
+        <iframe
+          src="https://landbot.online/v3/H-2646357-3Q9773UUXZUYB3GQ/index.html"
+          className="home-iframe"
+        ></iframe>
       </div>
       <style jsx>
         {`
-          .home-container1 {
+          .home-container {
             width: 100%;
             display: flex;
             min-height: 100vh;
             align-items: center;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-end;
           }
-          .home-container2 {
-            flex: 1;
-            width: 814px;
-            height: 1005px;
+          .home-iframe {
+            width: 1200px;
+            height: 1391px;
           }
-          .home-container3 {
-            display: contents;
+          @media (max-width: 991px) {
+            .home-iframe {
+              width: 991px;
+              height: 1390px;
+            }
+          }
+          @media (max-width: 767px) {
+            .home-iframe {
+              width: 767px;
+              height: 1383px;
+            }
+          }
+          @media (max-width: 479px) {
+            .home-iframe {
+              width: 479px;
+              height: 1374px;
+            }
           }
         `}
       </style>
